@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Tier1NL
+  - ABC Buttons
+  - Letters
+  - TextVakken
   layers:
   - Default
   - TransparentFX
