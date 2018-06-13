@@ -14,6 +14,8 @@ public class RunPlayer : MonoBehaviour {
     public Text question;
     bool nextQuestion = false;
     public InputField inputAnswer;
+
+    [Header("Answer")]
     public int answer;
     private string answerString;
     
