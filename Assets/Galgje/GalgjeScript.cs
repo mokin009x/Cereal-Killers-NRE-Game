@@ -28,6 +28,8 @@ public class GalgjeScript : MonoBehaviour
     public List<GameObject> galgje;
     public bool gameDone = false;
 
+    public int amountCorrect = 0;
+
     // Use this for initialization
     private void Start()
     {
@@ -60,148 +62,145 @@ public class GalgjeScript : MonoBehaviour
 
     private void CheckWord()
     {
-        
-        
-            
-        
-      
-
-        if (textVakken[textvaknummer].text == currentWord[textvaknummer].ToString())
+        bool incorrect = false;
+        for (int i = 0; i < currentWord.Length; i++)
         {
-            
-            if (gameDone != true)
+            if (currentWord[i].ToString() == inputLetter)
             {
-                textvaknummer = textvaknummer + 1;
+                textVakken[i].text = inputLetter;
+                Debug.Log(inputLetter);
+                Debug.Log(textVakken[i].text);
+                amountCorrect = amountCorrect + 1;
+            }
 
-            }
+            
         }
-        else
+
+        if (amountCorrect == 0)
         {
-            if (gameDone != true)
+            galgje[galgjeNummer].GetComponent<MeshRenderer>().enabled = true;
+            galgjeNummer = galgjeNummer + 1;
+            if (galgjeNummer >= galgje.Count)
             {
-                galgje[galgjeNummer].GetComponent<MeshRenderer>().enabled = true;
-                galgjeNummer = galgjeNummer + 1;
-                if (galgjeNummer >= galgje.Count)
-                {
-                    gameDone = true;
-                }
+               Debug.Log("done");            
             }
-           
+
         }
-        
-        
-        Debug.Log(wrongLetters);
+
+        amountCorrect = 0;
         inputLetter = null;
     }
+
+    
 
     public void Buttons(int letter)
     {
         switch (letter)
         {
             case 1:
-                textVakken[textvaknummer].text = "A";
+                inputLetter = "A";
                 CheckWord();
                 break;
             case 2:
-                textVakken[textvaknummer].text = "B";
+                inputLetter = "B";
                 CheckWord();
 
                 break;
             case 3:
-                textVakken[textvaknummer].text = "C";
+                inputLetter = "C";
                 CheckWord();
                 break;
             case 4:
-                textVakken[textvaknummer].text = "D";
+                inputLetter = "D";
                 CheckWord();
                 break;
             case 5:
-                textVakken[textvaknummer].text = "E";
+                inputLetter = "E";
                 CheckWord();
                 break;
             case 6:
-                textVakken[textvaknummer].text = "F";
+                inputLetter = "F";
                 CheckWord();
                 break;
             case 7:
-                textVakken[textvaknummer].text = "G";
+                inputLetter = "G";
                 CheckWord();
                 break;
             case
                 8:
-                textVakken[textvaknummer].text = "H";
+                inputLetter = "H";
                 CheckWord();
                 break;
             case 9:
-                textVakken[textvaknummer].text = "I";
+                inputLetter = "I";
                 CheckWord();
                 break;
             case 10:
-                textVakken[textvaknummer].text = "J";
+                inputLetter = "J";
                 CheckWord();
                 break;
             case 11:
-                textVakken[textvaknummer].text = "K";
+                inputLetter = "K";
                 CheckWord();
                 break;
             case 12:
-                textVakken[textvaknummer].text = "L";
+                inputLetter = "L";
                 CheckWord();
                 break;
             case 13:
-                textVakken[textvaknummer].text = "M";
+                inputLetter = "M";
                 CheckWord();
                 break;
             case 14:
-                textVakken[textvaknummer].text = "N";
+                inputLetter = "N";
                 CheckWord();
                 break;
             case 15:
-                textVakken[textvaknummer].text = "O";
+                inputLetter = "O";
                 CheckWord();
                 break;
             case 16:
-                textVakken[textvaknummer].text = "P";
+                inputLetter = "P";
                 CheckWord();
                 break;
             case 17:
-                textVakken[textvaknummer].text = "Q";
+                inputLetter = "Q";
                 CheckWord();
                 break;
             case 18:
-                textVakken[textvaknummer].text = "R";
+                inputLetter = "R";
                 CheckWord();
                 break;
             case 19:
-                textVakken[textvaknummer].text = "S";
+                inputLetter = "S";
                 CheckWord();
                 break;
             case 20:
-                textVakken[textvaknummer].text = "T";
+                inputLetter = "T";
                 CheckWord();
                 break;
             case 21:
-                textVakken[textvaknummer].text = "U";
+                inputLetter = "U";
                 CheckWord();
                 break;
             case 22:
-                textVakken[textvaknummer].text = "V";
+                inputLetter = "V";
                 CheckWord();
                 break;
             case 23:
-                textVakken[textvaknummer].text = "W";
+                inputLetter = "W";
                 CheckWord();
                 break;
             case 24:
-                textVakken[textvaknummer].text = "X";
+                inputLetter = "X";
                 CheckWord();
                 break;
             case 25:
-                textVakken[textvaknummer].text = "Y";
+                inputLetter = "Y";
                 CheckWord();
                 break;
             case 26:
-                textVakken[textvaknummer].text = "Z";
+                inputLetter = "Z";
                 CheckWord();
                 break;
         }

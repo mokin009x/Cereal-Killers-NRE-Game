@@ -7012,6 +7012,7 @@ MonoBehaviour:
   - {fileID: 1278831068}
   - {fileID: 311537637}
   gameDone: 0
+  amountCorrect: 0
 --- !u!95 &2078497588
 Animator:
   serializedVersion: 3
