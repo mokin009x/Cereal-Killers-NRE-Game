@@ -10,8 +10,8 @@ public class GalgjeScript : MonoBehaviour
         "W", "X", "Y", "Z"
     };
 
-    
 
+    private string[] words = new string[] {"HALLO","WATER","KOELKAST","DRINKEN","RIDDER" };
     public string currentWord; //dit is het woord dat je moet raden
     public List<GameObject> inputButtons;
     public string inputLetter;
@@ -26,13 +26,14 @@ public class GalgjeScript : MonoBehaviour
     public int galgjeNummer=0;
 
     public List<GameObject> galgje;
+    public bool gameDone = false;
 
     // Use this for initialization
     private void Start()
     {
       
         startingGalgje();
-        currentWord = "ABAB";
+        currentWord = words[Random.Range(0,words.Length)];
         sizeWord = currentWord.Length;
 
 
@@ -67,14 +68,25 @@ public class GalgjeScript : MonoBehaviour
 
         if (textVakken[textvaknummer].text == currentWord[textvaknummer].ToString())
         {
-            textvaknummer = textvaknummer + 1;
             
-           
+            if (gameDone != true)
+            {
+                textvaknummer = textvaknummer + 1;
+
+            }
         }
         else
         {
-            galgje[galgjeNummer].GetComponent<MeshRenderer>().enabled = true;
-            galgjeNummer = galgjeNummer + 1;
+            if (gameDone != true)
+            {
+                galgje[galgjeNummer].GetComponent<MeshRenderer>().enabled = true;
+                galgjeNummer = galgjeNummer + 1;
+                if (galgjeNummer >= galgje.Count)
+                {
+                    gameDone = true;
+                }
+            }
+           
         }
         
         
@@ -108,88 +120,88 @@ public class GalgjeScript : MonoBehaviour
                 CheckWord();
                 break;
             case 6:
-                theWord.text = theWord.text + "F";
+                textVakken[textvaknummer].text = "F";
                 CheckWord();
                 break;
             case 7:
-                theWord.text = theWord.text + "G";
+                textVakken[textvaknummer].text = "G";
                 CheckWord();
                 break;
             case
                 8:
-                theWord.text = theWord.text + "H";
+                textVakken[textvaknummer].text = "H";
                 CheckWord();
                 break;
             case 9:
-                theWord.text = theWord.text + "I";
+                textVakken[textvaknummer].text = "I";
                 CheckWord();
                 break;
             case 10:
-                theWord.text = theWord.text + "J";
+                textVakken[textvaknummer].text = "J";
                 CheckWord();
                 break;
             case 11:
-                theWord.text = theWord.text + "K";
+                textVakken[textvaknummer].text = "K";
                 CheckWord();
                 break;
             case 12:
-                theWord.text = theWord.text + "L";
+                textVakken[textvaknummer].text = "L";
                 CheckWord();
                 break;
             case 13:
-                theWord.text = theWord.text + "M";
+                textVakken[textvaknummer].text = "M";
                 CheckWord();
                 break;
             case 14:
-                theWord.text = theWord.text + "N";
+                textVakken[textvaknummer].text = "N";
                 CheckWord();
                 break;
             case 15:
-                theWord.text = theWord.text + "O";
+                textVakken[textvaknummer].text = "O";
                 CheckWord();
                 break;
             case 16:
-                theWord.text = theWord.text + "P";
+                textVakken[textvaknummer].text = "P";
                 CheckWord();
                 break;
             case 17:
-                theWord.text = theWord.text + "Q";
+                textVakken[textvaknummer].text = "Q";
                 CheckWord();
                 break;
             case 18:
-                theWord.text = theWord.text + "R";
+                textVakken[textvaknummer].text = "R";
                 CheckWord();
                 break;
             case 19:
-                theWord.text = theWord.text + "S";
+                textVakken[textvaknummer].text = "S";
                 CheckWord();
                 break;
             case 20:
-                theWord.text = theWord.text + "T";
+                textVakken[textvaknummer].text = "T";
                 CheckWord();
                 break;
             case 21:
-                theWord.text = theWord.text + "U";
+                textVakken[textvaknummer].text = "U";
                 CheckWord();
                 break;
             case 22:
-                theWord.text = theWord.text + "V";
+                textVakken[textvaknummer].text = "V";
                 CheckWord();
                 break;
             case 23:
-                theWord.text = theWord.text + "W";
+                textVakken[textvaknummer].text = "W";
                 CheckWord();
                 break;
             case 24:
-                theWord.text = theWord.text + "X";
+                textVakken[textvaknummer].text = "X";
                 CheckWord();
                 break;
             case 25:
-                theWord.text = theWord.text + "Y";
+                textVakken[textvaknummer].text = "Y";
                 CheckWord();
                 break;
             case 26:
-                theWord.text = theWord.text + "Z";
+                textVakken[textvaknummer].text = "Z";
                 CheckWord();
                 break;
         }

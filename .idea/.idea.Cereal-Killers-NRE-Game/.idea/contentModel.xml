@@ -8,6 +8,9 @@
       <e p="Assets" t="Include">
         <e p="EilandScript.cs" t="Include" />
         <e p="GalgjeScript.cs" t="Include" />
+        <e p="LevelChoose" t="Include">
+          <e p="LevelSelect.cs" t="Include" />
+        </e>
         <e p="ProCore" t="Include">
           <e p="ProBuilder" t="Include">
             <e p="About" t="Include">
@@ -161,6 +164,10 @@
               <e p="pg_GridShader.shader" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="RekenenRun" t="Include">
+          <e p="BotsRun.cs" t="Include" />
+          <e p="RunPlayer.cs" t="Include" />
         </e>
         <e p="SpawnScript.cs" t="Include" />
         <e p="Test.cs" t="Include" />
