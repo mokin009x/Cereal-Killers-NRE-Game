@@ -15,6 +15,7 @@
         <e p="Lingo" t="Include">
           <e p="LingoScript.cs" t="Include" />
         </e>
+        <e p="MouseHover.cs" t="Include" />
         <e p="ProCore" t="Include">
           <e p="ProBuilder" t="Include">
             <e p="About" t="Include">
@@ -178,6 +179,7 @@
           <e p="BotsRun.cs" t="Include" />
           <e p="RunPlayer.cs" t="Include" />
         </e>
+        <e p="TextBalloon.cs" t="Include" />
       </e>
       <e p="Cereal-Killers-NRE-Game.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />

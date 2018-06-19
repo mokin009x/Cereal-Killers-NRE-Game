@@ -78,7 +78,7 @@ public class GalgjeScript : MonoBehaviour
 
         if (amountCorrect == 0)
         {
-            galgje[galgjeNummer].GetComponent<MeshRenderer>().enabled = true;
+            galgje[galgjeNummer].GetComponent<SpriteRenderer>().enabled = true;
             galgjeNummer = galgjeNummer + 1;
             if (galgjeNummer >= galgje.Count)
             {
