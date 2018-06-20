@@ -39,7 +39,12 @@ public class GalgjeScript : MonoBehaviour
         sizeWord = currentWord.Length;
 
 
-        for (var i = 0; i < sizeWord; i++) wordLetters.Add(currentWord[i]);
+        for (var i = 0; i < sizeWord; i++)
+        {
+            
+            wordLetters.Add(currentWord[i]);
+            textVakken[i].GetComponentInParent<Image>().enabled = true;
+        }
     }
 
 

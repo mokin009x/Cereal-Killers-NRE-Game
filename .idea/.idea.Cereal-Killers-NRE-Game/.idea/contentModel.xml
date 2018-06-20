@@ -180,6 +180,7 @@
           <e p="RunPlayer.cs" t="Include" />
         </e>
         <e p="TextBalloon.cs" t="Include" />
+        <e p="TextEng.cs" t="Include" />
       </e>
       <e p="Cereal-Killers-NRE-Game.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />

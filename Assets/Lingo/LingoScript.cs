@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class LingoScript : MonoBehaviour
 {
-
+	public bool gameDone = false;
 	public List<GameObject> invulVakkenKans1 = new List<GameObject>();
 	public List<GameObject> invulVakkenKans2 = new List<GameObject>();
 	public List<GameObject> invulVakkenKans3 = new List<GameObject>();
@@ -20,18 +20,21 @@ public class LingoScript : MonoBehaviour
 	public string theWord;
 	public List<char> wordLetters;
 	public int currentRow= 0;
-
+	public int amountCorrect;
+	public List<string> correctLetters;
+	public TextEng NPC_Refference;
 
 	// Use this for initialization
 	void Start ()
 	{
+		NPC_Refference = GameObject.Find("Main Camera").GetComponent<TextEng>();
 		StartLingo();
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.Space) && gameDone != true)
 		{
 			CheckWord();
 		}	
@@ -48,43 +51,87 @@ public class LingoScript : MonoBehaviour
 		theWord = words[Random.Range(0, words.Length)];
 		for (var i = 0; i < theWord.Length; i++) wordLetters.Add(theWord[i]);
 
-		
+		invulKansen[currentRow][0].GetComponent<InputField>().text = theWord[0].ToString();
 
 	}
 
 	 void CheckWord()
 	{
-		var textVak = invulKansen[currentRow];
-		var correct = 0;
-		
-		for (int i = 0; i < 5; i++)
+		if (currentRow == 4)
 		{
-			var letter = textVak[i].transform.GetChild(2).GetComponent<Text>();
+			GameOverWrong();
+		}
 
-			if (letter.text == theWord[i].ToString())
+
+		if (gameDone != true)
+		{
+			var textVak = invulKansen[currentRow];
+			amountCorrect = 0;		
+			for (int i = 0; i < 5; i++)
 			{
-				letter.color = Color.green;
-				correct = correct + 1;
+				var letter = textVak[i].transform.GetChild(1).GetComponent<Text>();
+
+				if (letter.text == theWord[i].ToString())
+				{
+					letter.color = Color.green;
+					amountCorrect = amountCorrect + 1;
+					correctLetters.Add(letter.text);
+				}
+				else
+				{
+					for (int j = 0; j < theWord.Length; j++)
+					{
+						if (letter.text == theWord[j].ToString())
+						{
+							letter.color = Color.yellow;
+						}
+					}
+				}
+				textVak[i].GetComponent<InputField>().interactable = false;
+
+
 			}
-			else
+
+			if (amountCorrect ==5)
+			{
+				GameOverRight();
+			}
+			currentRow = currentRow + 1;
+
+			for (int i = 0; i < correctLetters.Count; i++)
 			{
 				for (int j = 0; j < theWord.Length; j++)
 				{
-					if (letter.text == theWord[j].ToString())
+					if (correctLetters[i] == theWord[j].ToString())
 					{
-						letter.color = Color.yellow;
+						invulKansen[currentRow][j].GetComponent<InputField>().text = correctLetters[i];
 					}
 				}
-			}
-			textVak[i].GetComponent<InputField>().interactable = false;
-
-
+			}	
 		}
 
-		if (correct ==5)
-		{
-			Debug.Log("Game done");
-		}
-		currentRow = currentRow + 1;
+		
+		
+	}
+	void GameOverWrong()
+	{
+		gameDone = true;
+		NPC_Refference.NPC_Begin.SetActive(true);
+		NPC_Refference.gameStart.SetActive(false);
+		NPC_Refference.string0 = "Jesus, never help people again. You suck. You lost a house. Bye, Felicia!";
+		NPC_Refference.RestartText();
+		Debug.Log("Game Done Wrong");
+	
+	}
+
+	void GameOverRight()
+	{
+		gameDone = true;
+		NPC_Refference.NPC_Begin.SetActive(true);
+		NPC_Refference.gameStart.SetActive(false);
+		NPC_Refference.string0 = "Yes, the government will give me my 5 wives back! Thanks, bro! I’ll give you my house!";
+		NPC_Refference.RestartText();
+		Debug.Log("Game Done Right");
+	
 	}
 }
