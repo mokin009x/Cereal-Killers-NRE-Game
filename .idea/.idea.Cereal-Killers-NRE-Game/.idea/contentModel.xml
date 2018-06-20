@@ -10,6 +10,7 @@
           <e p="NedTextScript.cs" t="Include" />
         </e>
         <e p="LevelChoose" t="Include">
+          <e p="Intro.cs" t="Include" />
           <e p="LevelSelect.cs" t="Include" />
           <e p="MapBuildPoints.cs" t="Include" />
           <e p="MouseHover.cs" t="Include" />
@@ -17,6 +18,13 @@
         <e p="Lingo" t="Include">
           <e p="LingoScript.cs" t="Include" />
           <e p="TextEng.cs" t="Include" />
+        </e>
+        <e p="ProCore" t="Include">
+          <e p="ProBuilder" t="Include">
+            <e p="Shader" t="Include">
+              <e p="pb_StandardVertexColor.shader" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="Random stuff" t="Include">
           <e p="EilandScript.cs" t="Include" />
@@ -26,6 +34,7 @@
         <e p="RekenenRun" t="Include">
           <e p="BotsRun.cs" t="Include" />
           <e p="RunPlayer.cs" t="Include" />
+          <e p="Wheels.cs" t="Include" />
         </e>
         <e p="Singleton.cs" t="Include" />
         <e p="TextBalloon.cs" t="Include" />

@@ -22,7 +22,7 @@ public class TextEng : MonoBehaviour
     public int waitToDestroy;
 
     public GameObject Canvas;
-    public GameObject NPC_Begin;
+    public GameObject[] NPC_Begin;
     public GameObject gameStart;
     public GameObject deactivateButton;
     private string currentText = "";
@@ -76,7 +76,11 @@ public class TextEng : MonoBehaviour
     public void BeginGame()
     {
         deactivateButton.SetActive(false);
-        NPC_Begin.SetActive(false);
+        for (int i = 0; i < NPC_Begin.Length; i++)
+        {
+            NPC_Begin[i].SetActive(false);
+
+        }
         gameStart.SetActive(true);
     }
 

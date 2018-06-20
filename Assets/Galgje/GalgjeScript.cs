@@ -120,11 +120,10 @@ public class GalgjeScript : MonoBehaviour
             NPC_Refference.NPC_Begin[i].SetActive(true);
 
         }
-        for (int i = 0; i < NPC_Refference.gameStart.Length; i++)
-        {
-            NPC_Refference.gameStart[i].SetActive(false);
+        
+            NPC_Refference.gameStart.SetActive(false);
 
-        }
+        
         NPC_Refference.string0 = "dankje, maar mijn bae heeft me nog steeds verlaten. Blijkbaar praat ik teveel over voetbal. Hier is mijn huis.";
        NPC_Refference.RestartText();
         Debug.Log("Right"); 
@@ -137,11 +136,8 @@ public class GalgjeScript : MonoBehaviour
             NPC_Refference.NPC_Begin[i].SetActive(true);
 
         }
-        for (int i = 0; i < NPC_Refference.gameStart.Length; i++)
-        {
-            NPC_Refference.gameStart[i].SetActive(false);
+            NPC_Refference.gameStart.SetActive(false);
 
-        }        
         NPC_Refference.string0 = "Ik heb per ongeluk mijn bae vermoord. Nu word ik levend begraven, maar ik word een geest en ga je lastig vallen xoxo. Je hebt een huis verloren. ";
         NPC_Refference.RestartText();
         Debug.Log("Wrong"); 

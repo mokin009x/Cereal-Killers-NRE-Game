@@ -115,7 +115,11 @@ public class LingoScript : MonoBehaviour
 	void GameOverWrong()
 	{
 		gameDone = true;
-		NPC_Refference.NPC_Begin.SetActive(true);
+		for (int i = 0; i < NPC_Refference.NPC_Begin.Length; i++)
+		{
+			NPC_Refference.NPC_Begin[i].SetActive(true);
+
+		}
 		NPC_Refference.gameStart.SetActive(false);
 		NPC_Refference.string0 = "Jesus, never help people again. You suck. You lost a house. Bye, Felicia!";
 		NPC_Refference.RestartText();
@@ -126,7 +130,11 @@ public class LingoScript : MonoBehaviour
 	void GameOverRight()
 	{
 		gameDone = true;
-		NPC_Refference.NPC_Begin.SetActive(true);
+		for (int i = 0; i < NPC_Refference.NPC_Begin.Length; i++)
+		{
+			NPC_Refference.NPC_Begin[i].SetActive(true);
+
+		}
 		NPC_Refference.gameStart.SetActive(false);
 		NPC_Refference.string0 = "Yes, the government will give me my 5 wives back! Thanks, bro! I’ll give you my house!";
 		NPC_Refference.RestartText();

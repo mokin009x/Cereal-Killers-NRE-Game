@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -457,8 +457,8 @@ Canvas:
   m_GameObject: {fileID: 115874397}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 212531971}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -467,7 +467,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 478
   m_TargetDisplay: 0
 --- !u!224 &115874401
 RectTransform:
@@ -790,7 +790,12 @@ MonoBehaviour:
   waitSentence3: 5
   waitToDestroy: 5
   Canvas: {fileID: 0}
-  NPC_Begin: {fileID: 1625189605}
+  NPC_Begin:
+  - {fileID: 1576710160}
+  - {fileID: 641509388}
+  - {fileID: 1923307157}
+  - {fileID: 1240647358}
+  - {fileID: 1701426967}
   gameStart: {fileID: 546079723}
   deactivateButton: {fileID: 1701426967}
 --- !u!1 &247238647
@@ -1950,7 +1955,7 @@ GameObject:
   - component: {fileID: 641509389}
   - component: {fileID: 641509390}
   m_Layer: 0
-  m_Name: CharactersProject[291] (1)
+  m_Name: Troll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1963,11 +1968,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 641509388}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -333.18, y: -186.01, z: -4.19}
-  m_LocalScale: {x: 0.132, y: 0.132, z: 0.132}
+  m_LocalPosition: {x: 6, y: -2.9, z: 89.90689}
+  m_LocalScale: {x: 0.11018943, y: 0.11018943, z: 0.11018943}
   m_Children: []
-  m_Father: {fileID: 1625189606}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &641509390
 SpriteRenderer:
@@ -2003,7 +2008,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 120
   m_Sprite: {fileID: 21300000, guid: 592b5b413a519e647b81c4392475f75d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3351,7 +3356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50.4, y: 37}
+  m_AnchoredPosition: {x: -29.8, y: -21.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1240647360
@@ -4572,7 +4577,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 102
   m_Sprite: {fileID: 21300000, guid: 625f35e97a809884e963e251b417b9f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4590,11 +4595,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1576710160}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -328.9, y: -181.26, z: -2.59}
-  m_LocalScale: {x: -0.12770201, y: 0.12770201, z: -0.12770201}
+  m_LocalPosition: {x: 0.6, y: 1, z: 89.942444}
+  m_LocalScale: {x: 0.14158195, y: 0.14158195, z: 0}
   m_Children: []
-  m_Father: {fileID: 1625189606}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1625189605
 GameObject:
@@ -4624,8 +4629,6 @@ RectTransform:
   - {fileID: 1923307158}
   - {fileID: 1240647359}
   - {fileID: 1701426968}
-  - {fileID: 641509389}
-  - {fileID: 1576710162}
   m_Father: {fileID: 115874401}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4701,7 +4704,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -49.7, y: 37}
+  m_AnchoredPosition: {x: -31, y: -20}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1701426969
@@ -5856,7 +5859,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -74.9, y: 58}
+  m_AnchoredPosition: {x: -48.1, y: 44.6}
   m_SizeDelta: {x: 160, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1923307159

@@ -23,7 +23,7 @@ public class NedTextScript : MonoBehaviour
 
     public GameObject Canvas;
     public GameObject[] NPC_Begin;
-    public GameObject[] gameStart;
+    public GameObject gameStart;
     public GameObject deactivateButton;
     private string currentText = "";
     // Use this for initialization
@@ -41,11 +41,10 @@ public class NedTextScript : MonoBehaviour
     }
 public void TurnOffUi() 
 {
-    for (int i = 0; i < gameStart.Length; i++)
-    {
-        gameStart[i].SetActive(false);
     
-    }
+        gameStart.SetActive(false);
+    
+    
 
 }
 
@@ -91,11 +90,10 @@ public void TurnOffUi()
         }
         
 
-        for (int i = 0; i < gameStart.Length; i++)
-        {
-            gameStart[i].SetActive(true);
+        
+            gameStart.SetActive(true);
 
-        }
+        
     }
 
     public void RestartText()
