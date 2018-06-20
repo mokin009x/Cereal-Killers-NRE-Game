@@ -8,6 +8,8 @@ TagManager:
   - ABC Buttons
   - Letters
   - TextVakken
+  - finish
+  - EnemyAI
   layers:
   - Default
   - TransparentFX

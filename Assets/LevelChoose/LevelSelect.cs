@@ -20,6 +20,7 @@ public class LevelSelect : MonoBehaviour {
 
     void Start ()
     {
+        glow.SetActive(false);
         backButton.SetActive(false);
         anim = GetComponent<Animator>();
         anim.SetInteger("State", 0);
@@ -45,17 +46,14 @@ public class LevelSelect : MonoBehaviour {
         {
             island.GetComponent<MeshRenderer>().material = islandTextures[1];
         }
-
         if (Singleton.Score > 59 && Singleton.Score < 88)
         {
             island.GetComponent<MeshRenderer>().material = islandTextures[2];
         }
-
         if (Singleton.Score > 89)
         {
             island.GetComponent<MeshRenderer>().material = islandTextures[3];
         }
-
     }
 
     public void Back()

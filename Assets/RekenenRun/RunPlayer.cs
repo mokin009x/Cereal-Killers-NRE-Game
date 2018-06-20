@@ -76,7 +76,7 @@ public class RunPlayer : MonoBehaviour {
         {
             firstNumber = Random.Range(1, 11);
             secondNumber = Random.Range(1, 11);
-            question.text = firstNumber + " * " + secondNumber;
+            question.text = firstNumber + " X " + secondNumber;
             answer = firstNumber * secondNumber;
         }
 
@@ -109,6 +109,21 @@ public class RunPlayer : MonoBehaviour {
                 nextQuestion = true;
                 gameStart = true;
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "finish")
+        {
+            Debug.Log("Yay");
+            gameStart = false;
+        }
+
+        if (other.gameObject.tag == "EnemyAI")
+        {
+            Debug.Log("garbage");
+            gameStart = false;
         }
     }
 
