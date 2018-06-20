@@ -22,8 +22,8 @@ public class NedTextScript : MonoBehaviour
     public int waitToDestroy;
 
     public GameObject Canvas;
-    public GameObject NPC_Begin;
-    public GameObject gameStart;
+    public GameObject[] NPC_Begin;
+    public GameObject[] gameStart;
     public GameObject deactivateButton;
     private string currentText = "";
     // Use this for initialization
@@ -41,7 +41,11 @@ public class NedTextScript : MonoBehaviour
     }
 public void TurnOffUi() 
 {
-    gameStart.SetActive(false);
+    for (int i = 0; i < gameStart.Length; i++)
+    {
+        gameStart[i].SetActive(false);
+    
+    }
 
 }
 
@@ -80,8 +84,18 @@ public void TurnOffUi()
     public void BeginGame()
     {
         deactivateButton.SetActive(false);
-        NPC_Begin.SetActive(false);
-        gameStart.SetActive(true);
+
+        for (int i = 0; i < NPC_Begin.Length; i++)
+        {
+            NPC_Begin[i].SetActive(false);    
+        }
+        
+
+        for (int i = 0; i < gameStart.Length; i++)
+        {
+            gameStart[i].SetActive(true);
+
+        }
     }
 
     public void RestartText()
