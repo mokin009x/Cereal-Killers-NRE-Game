@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Vuforia;
+using Image = UnityEngine.UI.Image;
 
 public class GalgjeScript : MonoBehaviour
 {
@@ -29,17 +31,25 @@ public class GalgjeScript : MonoBehaviour
     public bool gameDone = false;
 
     public int amountCorrect = 0;
+    public int test = 0;
+
+    public NedTextScript NPC_Refference;
 
     // Use this for initialization
     private void Start()
     {
-      
+        NPC_Refference = GameObject.Find("Main Camera").GetComponent<NedTextScript>();
         startingGalgje();
         currentWord = words[Random.Range(0,words.Length)];
         sizeWord = currentWord.Length;
 
 
-        for (var i = 0; i < sizeWord; i++) wordLetters.Add(currentWord[i]);
+        for (var i = 0; i < sizeWord; i++)
+        {
+            
+            wordLetters.Add(currentWord[i]);
+            textVakken[i].GetComponentInParent<Image>().enabled = true;
+        }
     }
 
 
@@ -50,8 +60,8 @@ public class GalgjeScript : MonoBehaviour
 
     private void startingGalgje()
     {
-        var test2 = GameObject.Find("Canvas/Buttons");
-
+        var test2 = GameObject.Find("Canvas/StartGameObject/Buttons");
+        NPC_Refference.TurnOffUi();
         for (var i = 0; i < test2.transform.childCount; i++) inputButtons.Add(test2.transform.GetChild(i).gameObject);
         for (int i = 0; i < inputButtons.Count; i++)
         {
@@ -91,7 +101,36 @@ public class GalgjeScript : MonoBehaviour
         inputLetter = null;
     }
 
-    
+    public void TestingCheck()
+    {
+        test = 0;
+        for (int i = 0; i < sizeWord; i++)
+        {
+            if (textVakken[i].text == currentWord[i].ToString())
+            {
+                test = test + 1;
+            }
+        }
+    }
+
+    public void GameEndRight()
+    {
+       NPC_Refference.NPC_Begin.SetActive(true);
+        NPC_Refference.gameStart.SetActive(false);
+        NPC_Refference.string0 = "dankje, maar mijn bae heeft me nog steeds verlaten. Blijkbaar praat ik teveel over voetbal. Hier is mijn huis.";
+       NPC_Refference.RestartText();
+        Debug.Log("Right"); 
+    }
+
+    public void GameEndWrong()
+    {
+        NPC_Refference.NPC_Begin.SetActive(true);
+        NPC_Refference.gameStart.SetActive(false);
+        NPC_Refference.string0 = "Ik heb per ongeluk mijn bae vermoord. Nu word ik levend begraven, maar ik word een geest en ga je lastig vallen xoxo. Je hebt een huis verloren. ";
+        NPC_Refference.RestartText();
+        Debug.Log("Wrong"); 
+
+    }
 
     public void Buttons(int letter)
     {
@@ -204,5 +243,17 @@ public class GalgjeScript : MonoBehaviour
                 CheckWord();
                 break;
         }
+
+        TestingCheck();
+        if (test == sizeWord)
+        {
+            GameEndRight();
+        }
+
+        if (galgjeNummer == galgje.Count)
+        {
+            GameEndWrong();
+        }
+        
     }
 }
