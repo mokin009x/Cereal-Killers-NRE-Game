@@ -34,3 +34,9 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/ProCore/ProBuilder.meta
+Assets/ProCore/ProBuilder/Shader/pb_StandardVertexColor.shader.meta
+Assets/ProCore.meta
+Assets/ProCore/ProBuilder.meta
+Assets/ProCore/ProBuilder/Shader.meta
+Assets/ProCore/ProBuilder/Shader/pb_StandardVertexColor.shader.meta
