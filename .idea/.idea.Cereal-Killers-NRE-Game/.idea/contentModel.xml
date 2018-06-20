@@ -6,11 +6,16 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="EilandScript.cs" t="Include" />
-        <e p="GalgjeScript.cs" t="Include" />
+        <e p="Galgje" t="Include">
+          <e p="GalgjeScript.cs" t="Include" />
+        </e>
         <e p="LevelChoose" t="Include">
           <e p="LevelSelect.cs" t="Include" />
         </e>
+        <e p="Lingo" t="Include">
+          <e p="LingoScript.cs" t="Include" />
+        </e>
+        <e p="MouseHover.cs" t="Include" />
         <e p="ProCore" t="Include">
           <e p="ProBuilder" t="Include">
             <e p="About" t="Include">
@@ -165,12 +170,16 @@
             </e>
           </e>
         </e>
+        <e p="Random stuff" t="Include">
+          <e p="EilandScript.cs" t="Include" />
+          <e p="SpawnScript.cs" t="Include" />
+          <e p="Test.cs" t="Include" />
+        </e>
         <e p="RekenenRun" t="Include">
           <e p="BotsRun.cs" t="Include" />
           <e p="RunPlayer.cs" t="Include" />
         </e>
-        <e p="SpawnScript.cs" t="Include" />
-        <e p="Test.cs" t="Include" />
+        <e p="TextBalloon.cs" t="Include" />
       </e>
       <e p="Cereal-Killers-NRE-Game.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
