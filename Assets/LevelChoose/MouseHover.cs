@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MouseHover : MonoBehaviour
 {
 
     public GameObject glow;
+    public string nextSceneName;
 
     private void Start()
     {
@@ -14,13 +16,16 @@ public class MouseHover : MonoBehaviour
 
     void OnMouseOver()
     {
-        Debug.Log("Mouse is over GameObject.");
         glow.SetActive(true);
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("LoadMap");
+            SceneManager.LoadScene(nextSceneName);
+        }
     }
 
     void OnMouseExit()
     {
-        Debug.Log("Mouse is no longer on GameObject.");
         glow.SetActive(false);
     }
 }
