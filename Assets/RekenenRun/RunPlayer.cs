@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RunPlayer : MonoBehaviour {
 
@@ -18,6 +19,7 @@ public class RunPlayer : MonoBehaviour {
     [Header("Endings")]
     public GameObject win;
     public GameObject lose;
+    public static bool lost = false;
 
     [Header("Answer")]
     public int answer;
@@ -25,6 +27,8 @@ public class RunPlayer : MonoBehaviour {
     
 	void Start ()
     {
+        lost = false;
+        gameStart = false;
         timer.text = countdown.ToString();
         StartCoroutine(StartGame());
 	}
@@ -49,6 +53,15 @@ public class RunPlayer : MonoBehaviour {
                 inputAnswer.text = null;
                 GenerateQuestion();
             }
+        }
+
+        if (lost == true)
+        {
+            lose.SetActive(true);
+            gameStart = false;
+            Singleton.Score = Singleton.Score - 10;
+            lost = false;
+            StartCoroutine(BackToMenu());
         }
 	}
 
@@ -122,13 +135,16 @@ public class RunPlayer : MonoBehaviour {
         {
             win.SetActive(true);
             gameStart = false;
+            Singleton.Score = Singleton.Score + 10;
+            StartCoroutine(BackToMenu());
         }
 
-        if (other.gameObject.tag == "EnemyAI")
-        {
-            lose.SetActive(true);
-            gameStart = false;
-        }
+    }
+
+    IEnumerator BackToMenu()
+    {
+        yield return new WaitForSeconds(6f);
+        SceneManager.LoadScene("LevelSelect");
     }
 
 }
