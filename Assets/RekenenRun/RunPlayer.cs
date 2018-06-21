@@ -9,11 +9,15 @@ public class RunPlayer : MonoBehaviour {
 
     public float speed;
     public Text timer;
-    int countdown = 3;
+    int countdown = 10;
 
     public Text question;
     bool nextQuestion = false;
     public InputField inputAnswer;
+
+    [Header("Endings")]
+    public GameObject win;
+    public GameObject lose;
 
     [Header("Answer")]
     public int answer;
@@ -91,19 +95,19 @@ public class RunPlayer : MonoBehaviour {
 
     IEnumerator StartGame()
     {
-        for (int i = 1; i < 5; i++)
+        for (int i = 1; i < 12; i++)
         {
             yield return new WaitForSeconds(1);
-            if (i < 3)
+            if (i < 10)
             {
                 countdown = countdown - 1;
                 timer.text = countdown.ToString();
             }
-            if (i == 3)
+            if (i == 10)
             {
                 timer.text = "Go!";
             }
-            if (i == 4)
+            if (i == 11)
             {
                 Destroy(timer);
                 nextQuestion = true;
@@ -116,13 +120,13 @@ public class RunPlayer : MonoBehaviour {
     {
         if (other.gameObject.tag == "finish")
         {
-            Debug.Log("Yay");
+            win.SetActive(true);
             gameStart = false;
         }
 
         if (other.gameObject.tag == "EnemyAI")
         {
-            Debug.Log("garbage");
+            lose.SetActive(true);
             gameStart = false;
         }
     }
