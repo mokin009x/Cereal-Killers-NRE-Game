@@ -19,13 +19,6 @@
           <e p="LingoScript.cs" t="Include" />
           <e p="TextEng.cs" t="Include" />
         </e>
-        <e p="ProCore" t="Include">
-          <e p="ProBuilder" t="Include">
-            <e p="Shader" t="Include">
-              <e p="pb_StandardVertexColor.shader" t="Include" />
-            </e>
-          </e>
-        </e>
         <e p="Random stuff" t="Include">
           <e p="EilandScript.cs" t="Include" />
           <e p="SpawnScript.cs" t="Include" />
