@@ -22,6 +22,8 @@ public class LingoScript : MonoBehaviour
 	public int amountCorrect;
 	public List<string> correctLetters;
 	public TextEng NPC_Refference;
+	public Button showWordEnd;
+	public GameObject showWordEndobj;
 
 	// Use this for initialization
 	void Start ()
@@ -33,10 +35,22 @@ public class LingoScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetKeyDown(KeyCode.Space) && gameDone != true)
+		
+	}
+
+	public void CheckButton()
+	{
+		if (gameDone != true)
 		{
 			CheckWord();
-		}	
+
+			for (int i = 0; i < 5; i++)
+			{
+				invulKansen[currentRow][i].GetComponent<InputField>().interactable= true;
+
+			}
+		}
+
 	}
 
 	void StartLingo()
@@ -48,6 +62,10 @@ public class LingoScript : MonoBehaviour
 		invulKansen.Add(invulVakkenKans5);
 		Debug.Log(invulKansen.Count);
 		theWord = words[Random.Range(0, words.Length)];
+		
+		showWordEnd.GetComponentInChildren<Text>().text += theWord;
+		showWordEndobj.SetActive(false);
+
 		for (var i = 0; i < theWord.Length; i++) wordLetters.Add(theWord[i]);
 
 		invulKansen[currentRow][0].GetComponent<InputField>().text = theWord[0].ToString();
@@ -78,7 +96,7 @@ public class LingoScript : MonoBehaviour
 				}
 				else
 				{
-					for (int j = 0; j < theWord.Length; j++)
+					for (int j = 0; j < 5; j++)
 					{
 						if (letter.text == theWord[j].ToString())
 						{
@@ -95,7 +113,13 @@ public class LingoScript : MonoBehaviour
 			{
 				GameOverRight();
 			}
+
+
+			
+			
 			currentRow = currentRow + 1;
+
+			
 
 			for (int i = 0; i < correctLetters.Count; i++)
 			{
@@ -124,6 +148,7 @@ public class LingoScript : MonoBehaviour
 		NPC_Refference.string0 = "Jesus, never help people again. You suck. You lost a house. Bye, Felicia!";
 		NPC_Refference.RestartText();
 		Debug.Log("Game Done Wrong");
+		showWordEndobj.SetActive(true);
 	
 	}
 
@@ -139,6 +164,8 @@ public class LingoScript : MonoBehaviour
 		NPC_Refference.string0 = "Yes, the government will give me my 5 wives back! Thanks, bro! I’ll give you my house!";
 		NPC_Refference.RestartText();
 		Debug.Log("Game Done Right");
+		showWordEndobj.SetActive(true);
+
 	
 	}
 }

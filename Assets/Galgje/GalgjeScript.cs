@@ -34,6 +34,9 @@ public class GalgjeScript : MonoBehaviour
     public int test = 0;
 
     public NedTextScript NPC_Refference;
+    
+    public Button showWordEnd;
+    public GameObject showWordEndobj;
 
     // Use this for initialization
     private void Start()
@@ -42,7 +45,8 @@ public class GalgjeScript : MonoBehaviour
         startingGalgje();
         currentWord = words[Random.Range(0,words.Length)];
         sizeWord = currentWord.Length;
-
+        showWordEnd.GetComponentInChildren<Text>().text += currentWord;
+        showWordEndobj.SetActive(false);
 
         for (var i = 0; i < sizeWord; i++)
         {
@@ -67,6 +71,7 @@ public class GalgjeScript : MonoBehaviour
         {
             inputButtons[i].transform.GetChild(0).GetComponent<Text>().text = Alphabet[i];
         }
+        
     }
 
 
@@ -127,6 +132,8 @@ public class GalgjeScript : MonoBehaviour
         NPC_Refference.string0 = "dankje, maar mijn bae heeft me nog steeds verlaten. Blijkbaar praat ik teveel over voetbal. Hier is mijn huis.";
        NPC_Refference.RestartText();
         Debug.Log("Right"); 
+        showWordEndobj.SetActive(true);
+
     }
 
     public void GameEndWrong()
@@ -141,6 +148,7 @@ public class GalgjeScript : MonoBehaviour
         NPC_Refference.string0 = "Ik heb per ongeluk mijn bae vermoord. Nu word ik levend begraven, maar ik word een geest en ga je lastig vallen xoxo. Je hebt een huis verloren. ";
         NPC_Refference.RestartText();
         Debug.Log("Wrong"); 
+        showWordEndobj.SetActive(true);
 
     }
 
