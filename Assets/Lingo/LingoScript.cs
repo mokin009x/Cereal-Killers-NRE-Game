@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class LingoScript : MonoBehaviour
 {
+
+	public AudioSource hoverSound;
+	public AudioSource winningSound;
+	public AudioSource losingSound;
 	public bool gameDone = false;
 	public List<GameObject> invulVakkenKans1 = new List<GameObject>();
 	public List<GameObject> invulVakkenKans2 = new List<GameObject>();
@@ -28,6 +32,7 @@ public class LingoScript : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		hoverSound = gameObject.GetComponent<AudioSource>();
 		NPC_Refference = GameObject.Find("Main Camera").GetComponent<TextEng>();
 		StartLingo();
 	}
@@ -36,6 +41,11 @@ public class LingoScript : MonoBehaviour
 	void Update ()
 	{
 		
+	}
+
+	public void PlayHoverSound()
+	{
+		hoverSound.Play();
 	}
 
 	public void CheckButton()
@@ -139,6 +149,7 @@ public class LingoScript : MonoBehaviour
 	void GameOverWrong()
 	{
 		gameDone = true;
+		losingSound.Play();
 		for (int i = 0; i < NPC_Refference.NPC_Begin.Length; i++)
 		{
 			NPC_Refference.NPC_Begin[i].SetActive(true);
@@ -149,12 +160,14 @@ public class LingoScript : MonoBehaviour
 		NPC_Refference.RestartText();
 		Debug.Log("Game Done Wrong");
 		showWordEndobj.SetActive(true);
-	
+		Singleton.Score = Singleton.Score - 10;
 	}
 
 	void GameOverRight()
 	{
 		gameDone = true;
+		winningSound.Play();
+
 		for (int i = 0; i < NPC_Refference.NPC_Begin.Length; i++)
 		{
 			NPC_Refference.NPC_Begin[i].SetActive(true);
@@ -165,6 +178,7 @@ public class LingoScript : MonoBehaviour
 		NPC_Refference.RestartText();
 		Debug.Log("Game Done Right");
 		showWordEndobj.SetActive(true);
+		Singleton.Score = Singleton.Score + 10;
 
 	
 	}

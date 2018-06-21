@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NedTextScript : MonoBehaviour
 {
@@ -103,6 +104,6 @@ public void TurnOffUi()
 
     public void SceneSwitch()
     {
-        Debug.Log("nice");
+        SceneManager.LoadScene("LevelSelect");
     }
 }

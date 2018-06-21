@@ -13,6 +13,9 @@ public class GalgjeScript : MonoBehaviour
     };
 
 
+    public AudioSource hoverSound;
+    public AudioSource winningSound;
+    public AudioSource losingSound;
     private string[] words = new string[] {"HALLO","WATER","KOELKAST","DRINKEN","RIDDER" };
     public string currentWord; //dit is het woord dat je moet raden
     public List<GameObject> inputButtons;
@@ -60,6 +63,12 @@ public class GalgjeScript : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+    }
+
+
+    public void HoverSound()
+    {
+        hoverSound.Play();
     }
 
     private void startingGalgje()
@@ -133,6 +142,9 @@ public class GalgjeScript : MonoBehaviour
        NPC_Refference.RestartText();
         Debug.Log("Right"); 
         showWordEndobj.SetActive(true);
+        Singleton.Score = Singleton.Score + 10;
+        winningSound.Play();
+
 
     }
 
@@ -149,6 +161,8 @@ public class GalgjeScript : MonoBehaviour
         NPC_Refference.RestartText();
         Debug.Log("Wrong"); 
         showWordEndobj.SetActive(true);
+        Singleton.Score = Singleton.Score - 10;
+        losingSound.Play();
 
     }
 

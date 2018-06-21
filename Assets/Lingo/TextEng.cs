@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TextEng : MonoBehaviour
 {
@@ -91,6 +92,6 @@ public class TextEng : MonoBehaviour
 
     public void SceneSwitch()
     {
-        Debug.Log("nice");
+        SceneManager.LoadScene("LevelSelect");
     }
 }
