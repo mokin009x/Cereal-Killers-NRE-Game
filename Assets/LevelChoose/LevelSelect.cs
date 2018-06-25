@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class LevelSelect : MonoBehaviour {
 
     public Material[] islandTextures = new Material[1];
+    public GameObject[] houses = new GameObject[8];
+
     public GameObject island;
 
     public GameObject leftButton;
@@ -53,6 +55,79 @@ public class LevelSelect : MonoBehaviour {
         if (Singleton.Score > 89)
         {
             island.GetComponent<MeshRenderer>().material = islandTextures[3];
+        }
+
+        if (Singleton.Score > 9)
+        {
+            houses[0].SetActive(true);
+            if (Singleton.Score > 19)
+            {
+                houses[1].SetActive(true);
+                if (Singleton.Score > 29)
+                {
+                    houses[2].SetActive(true);
+                    if (Singleton.Score > 39)
+                    {
+                        houses[3].SetActive(true);
+                        if (Singleton.Score > 49)
+                        {
+                            houses[4].SetActive(true);
+                            if (Singleton.Score > 59)
+                            {
+                                houses[5].SetActive(true);
+                                if (Singleton.Score > 69)
+                                {
+                                    houses[6].SetActive(true);
+                                    if (Singleton.Score > 79)
+                                    {
+                                        houses[7].SetActive(true);
+                                        if (Singleton.Score > 89)
+                                        {
+                                            houses[8].SetActive(true);
+                                        }
+                                        else
+                                        {
+                                            houses[8].SetActive(false);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        houses[7].SetActive(false);
+                                    }
+                                }
+                                else
+                                {
+                                    houses[6].SetActive(false);
+                                }
+                            }
+                            else
+                            {
+                                houses[5].SetActive(false);
+                            }
+                        }
+                        else
+                        {
+                            houses[4].SetActive(false);
+                        }
+                    }
+                    else
+                    {
+                        houses[3].SetActive(false);
+                    }
+                }
+                else
+                {
+                    houses[2].SetActive(false);
+                }
+            }
+            else
+            {
+                houses[1].SetActive(false);
+            }
+        }
+        else
+        {
+            houses[0].SetActive(false);
         }
     }
 
