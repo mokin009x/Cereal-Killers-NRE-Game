@@ -91,8 +91,6 @@ public class GalgjeScript : MonoBehaviour
             if (currentWord[i].ToString() == inputLetter)
             {
                 textVakken[i].text = inputLetter;
-                Debug.Log(inputLetter);
-                Debug.Log(textVakken[i].text);
                 amountCorrect = amountCorrect + 1;
             }
 
@@ -103,10 +101,7 @@ public class GalgjeScript : MonoBehaviour
         {
             galgje[galgjeNummer].GetComponent<SpriteRenderer>().enabled = true;
             galgjeNummer = galgjeNummer + 1;
-            if (galgjeNummer >= galgje.Count)
-            {
-               Debug.Log("done");            
-            }
+           
 
         }
 
