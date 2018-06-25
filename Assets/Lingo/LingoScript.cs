@@ -29,6 +29,7 @@ public class LingoScript : MonoBehaviour
 	public Button showWordEnd;
 	public GameObject showWordEndobj;
 
+	public int startNumber = 0;
 	// Use this for initialization
 	void Start ()
 	{
@@ -40,8 +41,11 @@ public class LingoScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+	
 		
 	}
+
+	
 
 	public void PlayHoverSound()
 	{
@@ -65,6 +69,7 @@ public class LingoScript : MonoBehaviour
 
 	void StartLingo()
 	{
+		
 		invulKansen.Add(invulVakkenKans1);
 		invulKansen.Add(invulVakkenKans2);
 		invulKansen.Add(invulVakkenKans3);
@@ -79,7 +84,7 @@ public class LingoScript : MonoBehaviour
 		for (var i = 0; i < theWord.Length; i++) wordLetters.Add(theWord[i]);
 
 		invulKansen[currentRow][0].GetComponent<InputField>().text = theWord[0].ToString();
-
+		startNumber = startNumber + 1;
 	}
 
 	 void CheckWord()

@@ -172,108 +172,159 @@ public class GalgjeScript : MonoBehaviour
             case 1:
                 inputLetter = "A";
                 CheckWord();
+                inputButtons[0].GetComponent<Button>().interactable = false;
+                ;
                 break;
             case 2:
                 inputLetter = "B";
                 CheckWord();
+                inputButtons[1].GetComponent<Button>().interactable = false;
 
                 break;
             case 3:
                 inputLetter = "C";
                 CheckWord();
+                inputButtons[2].GetComponent<Button>().interactable = false;
+
                 break;
             case 4:
                 inputLetter = "D";
                 CheckWord();
+                inputButtons[3].GetComponent<Button>().interactable = false;
+
                 break;
             case 5:
                 inputLetter = "E";
                 CheckWord();
+                inputButtons[4].GetComponent<Button>().interactable = false;
+
                 break;
             case 6:
                 inputLetter = "F";
                 CheckWord();
+                inputButtons[5].GetComponent<Button>().interactable = false;
+
                 break;
             case 7:
                 inputLetter = "G";
                 CheckWord();
+                inputButtons[6].GetComponent<Button>().interactable = false;
+
                 break;
             case
                 8:
                 inputLetter = "H";
                 CheckWord();
+                inputButtons[7].GetComponent<Button>().interactable = false;
+
                 break;
             case 9:
                 inputLetter = "I";
                 CheckWord();
+                inputButtons[8].GetComponent<Button>().interactable = false;
+
                 break;
             case 10:
                 inputLetter = "J";
                 CheckWord();
+                inputButtons[9].GetComponent<Button>().interactable = false;
+
                 break;
             case 11:
                 inputLetter = "K";
                 CheckWord();
+                inputButtons[10].GetComponent<Button>().interactable = false;
+
                 break;
             case 12:
                 inputLetter = "L";
                 CheckWord();
+                inputButtons[11].GetComponent<Button>().interactable = false;
+
                 break;
             case 13:
                 inputLetter = "M";
                 CheckWord();
+                inputButtons[12].GetComponent<Button>().interactable = false;
+
                 break;
             case 14:
                 inputLetter = "N";
                 CheckWord();
+                inputButtons[13].GetComponent<Button>().interactable = false;
+
                 break;
             case 15:
                 inputLetter = "O";
                 CheckWord();
+                inputButtons[14].GetComponent<Button>().interactable = false;
+
                 break;
             case 16:
                 inputLetter = "P";
                 CheckWord();
+                inputButtons[15].GetComponent<Button>().interactable = false;
+
                 break;
             case 17:
                 inputLetter = "Q";
                 CheckWord();
+                inputButtons[16].GetComponent<Button>().interactable = false;
+
                 break;
             case 18:
                 inputLetter = "R";
                 CheckWord();
+                inputButtons[17].GetComponent<Button>().interactable = false;
+
                 break;
             case 19:
                 inputLetter = "S";
                 CheckWord();
+                inputButtons[18].GetComponent<Button>().interactable = false;
+
                 break;
             case 20:
                 inputLetter = "T";
                 CheckWord();
+                inputButtons[19].GetComponent<Button>().interactable = false;
+
                 break;
             case 21:
                 inputLetter = "U";
                 CheckWord();
+                inputButtons[20].GetComponent<Button>().interactable = false;
+
                 break;
             case 22:
                 inputLetter = "V";
                 CheckWord();
+                inputButtons[21].GetComponent<Button>().interactable = false;
+
                 break;
             case 23:
                 inputLetter = "W";
                 CheckWord();
+                inputButtons[22].GetComponent<Button>().interactable = false;
+
                 break;
             case 24:
                 inputLetter = "X";
                 CheckWord();
+                inputButtons[23].GetComponent<Button>().interactable = false;
+
                 break;
             case 25:
                 inputLetter = "Y";
                 CheckWord();
+                inputButtons[24].GetComponent<Button>().interactable = false;
+
                 break;
             case 26:
                 inputLetter = "Z";
                 CheckWord();
+                inputButtons[25].GetComponent<Button>().interactable = false;
+
                 break;
         }
 

@@ -808,6 +808,7 @@ MonoBehaviour:
   NPC_Refference: {fileID: 0}
   showWordEnd: {fileID: 305348506}
   showWordEndobj: {fileID: 305348504}
+  startNumber: 0
 --- !u!114 &212531974
 MonoBehaviour:
   m_ObjectHideFlags: 0
