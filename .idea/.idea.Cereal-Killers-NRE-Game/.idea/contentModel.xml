@@ -9,10 +9,10 @@
           <e p="GalgjeScript.cs" t="Include" />
           <e p="NedTextScript.cs" t="Include" />
         </e>
+        <e p="GameStartup.cs" t="Include" />
         <e p="LevelChoose" t="Include">
           <e p="Intro.cs" t="Include" />
           <e p="LevelSelect.cs" t="Include" />
-          <e p="MapBuildPoints.cs" t="Include" />
           <e p="MouseHover.cs" t="Include" />
         </e>
         <e p="Lingo" t="Include">

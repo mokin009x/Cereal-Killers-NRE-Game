@@ -15,7 +15,7 @@ public class GalgjeScript : MonoBehaviour
     public AudioSource hoverSound;
     public AudioSource winningSound;
     public AudioSource losingSound;
-    private string[] words = new string[] {"HALLO","WATER","KOELKAST","DRINKEN","RIDDER" };
+    private string[] words = new string[] {"HALLO","WATER","KOELKAST","DRINKEN","RIDDER","AUTO","OVEN", };
     public string currentWord; //dit is het woord dat je moet raden
     public List<GameObject> inputButtons;
     public string inputLetter;
